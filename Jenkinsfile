@@ -29,8 +29,8 @@ pipeline {
 		stage('deploy') {
 			steps {
 				sh './scripts/deploy-for-production.sh'
-				// input message: 'Finished using the web site? (Click "Proceed" to continue)'
-				// sh './scripts/kill.sh'
+				input message: 'Finished using the web site? (Click "Proceed" to continue)'
+				sh './scripts/kill.sh'
 			}
 		}
 	}
